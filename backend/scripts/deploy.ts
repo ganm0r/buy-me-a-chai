@@ -1,12 +1,18 @@
 import { ethers } from "hardhat";
 
 const main = async () => {
-  const chaiContractFactory = await ethers.getContractFactory('Chai');
-  const chaiContract = await chaiContractFactory.deploy();
+  const [ deployer ] = await ethers.getSigners();
+  const balance = await deployer.getBalance();
 
-  await chaiContract.deployed();
+  console.log("deployer address: ", deployer.address);
+  console.log("deployer balance: ", balance.toString());
 
-  console.log("chai contract deployed to: ", chaiContract.address);
+  const token = ethers.getContractFactory("Chai");
+  const portal = await (await token).deploy();
+  
+  await (await portal).deployed();
+
+  console.log("chai portal address: ", portal.address);
 };
 
 const run = async () => {
