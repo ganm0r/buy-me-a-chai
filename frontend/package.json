@@ -1,0 +1,103 @@
+{
+  "name": "buy-me-a-chai-frontend",
+  "version": "0.1.0",
+  "description": "Decentralized support",
+  "dependencies": {
+    "@cred/neopop-web": "^1.0.0",
+    "@svgr/core": "5.5.0",
+    "@svgr/plugin-jsx": "5.5.0",
+    "@svgr/plugin-prettier": "5.5.0",
+    "@svgr/plugin-svgo": "5.5.0",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "13.0.0",
+    "@testing-library/user-event": "13.2.1",
+    "@types/jest": "27.0.1",
+    "@types/node": "16.7.13",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "dedent": "0.7.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "fs-extra": "10.1.0",
+    "glob": "8.0.3",
+    "lodash.camelcase": "4.3.0",
+    "lodash.upperfirst": "4.3.1",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
+    "typescript": "4.4.2",
+    "web-vitals": "2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx}'"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier",
+      "airbnb",
+      "airbnb-typescript",
+      "eslint:recommended"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "rules": {
+          "no-undef": "off"
+        },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "project": "./tsconfig.json",
+          "createDefaultProgram": true
+        }
+      }
+    ],
+    "rules": {
+      "import/extensions": "off",
+      "@typescript-eslint/comma-dangle": [
+        "off"
+      ],
+      "react/function-component-definition": [
+        2,
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }
+      ],
+      "react/jsx-fragments": "off",
+      "react/react-in-jsx-scope": "error",
+      "react/jsx-props-no-spreading": "off",
+      "react/require-default-props": "off",
+      "import/prefer-default-export": "off",
+      "import/no-cycle": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/indent": "off",
+      "object-curly-newline": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
+}
