@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 const main = async () => {
   const chaiContractFactory = await ethers.getContractFactory("Chai");
   const chaiContract = await chaiContractFactory.deploy({
-    value: ethers.utils.parseEther("0.000001"),
+    value: ethers.utils.parseEther("0.1"),
   });
 
   await chaiContract.deployed();
@@ -15,7 +15,7 @@ const main = async () => {
   const chaiTransaction = await chaiContract.buyChai(
     "gandharv",
     "this is chai #1",
-    ethers.utils.parseEther("0.000001"),
+    ethers.utils.parseEther("0.001"),
   );
   
   await chaiTransaction.wait();

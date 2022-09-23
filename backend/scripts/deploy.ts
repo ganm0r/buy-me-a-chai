@@ -9,7 +9,7 @@ const main = async () => {
 
   const token = await ethers.getContractFactory("Chai");
   const portal = await token.deploy({
-    value: ethers.utils.parseEther("0.000001"),
+    value: ethers.utils.parseEther("0.001"),
   });
   
   await portal.deployed();

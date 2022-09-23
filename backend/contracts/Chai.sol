@@ -40,7 +40,7 @@ contract Chai {
   }
 
   function buyChai(string memory _name, string memory _message, uint256 _amount) public payable {
-    uint256 cost = 0.000005 ether;
+    uint256 cost = 0.001 ether;
     require(_amount <= cost, 'insufficient funds');
 
     totalChai += 1;
