@@ -1,9 +1,8 @@
 {
   "name": "buy-me-a-chai-frontend",
   "version": "0.1.0",
-  "description": "Decentralized support",
+  "description": "frontend for decentralized support",
   "dependencies": {
-    "@cred/neopop-web": "^1.0.0",
     "@svgr/core": "5.5.0",
     "@svgr/plugin-jsx": "5.5.0",
     "@svgr/plugin-prettier": "5.5.0",
