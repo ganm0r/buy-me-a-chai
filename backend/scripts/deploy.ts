@@ -7,10 +7,12 @@ const main = async () => {
   console.log("deployer address: ", deployer.address);
   console.log("deployer balance: ", balance.toString());
 
-  const token = ethers.getContractFactory("Chai");
-  const portal = await (await token).deploy();
+  const token = await ethers.getContractFactory("Chai");
+  const portal = await token.deploy({
+    value: ethers.utils.parseEther("0.000001"),
+  });
   
-  await (await portal).deployed();
+  await portal.deployed();
 
   console.log("chai portal address: ", portal.address);
 };
