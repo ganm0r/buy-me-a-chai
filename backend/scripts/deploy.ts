@@ -1,30 +1,19 @@
-import { ethers } from "hardhat";
+const hre = require('hardhat')
 
-const main = async () => {
-  const [ deployer ] = await ethers.getSigners();
-  const balance = await deployer.getBalance();
+async function main() {
+  const BuyMeAChai = await hre.ethers.getContractFactory('BuyMeAChai')
+  const buyMeAChai = await BuyMeAChai.deploy()
 
-  console.log("deployer address: ", deployer.address);
-  console.log("deployer balance: ", balance.toString());
+  await buyMeAChai.deployed()
 
-  const token = await ethers.getContractFactory("Chai");
-  const portal = await token.deploy({
-    value: ethers.utils.parseEther("0.001"),
-  });
-  
-  await portal.deployed();
+  console.log('buymeachai deployed to: ', buyMeAChai.address)
+}
 
-  console.log("chai portal address: ", portal.address);
-};
+main()
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })
 
-const run = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-run();
+export {}

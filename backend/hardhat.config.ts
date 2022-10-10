@@ -1,16 +1,10 @@
-require("dotenv").config();
+require('@nomiclabs/hardhat-ethers')
+require('@nomiclabs/hardhat-waffle')
 
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
+import { HardhatUserConfig } from 'hardhat/config'
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
-  networks: {
-    goerli: {
-      url: process.env.ALCHEMY_KEY,
-      accounts: [process.env.PRIVATE_KEY || ""],
-    }
-  }
-};
+  solidity: '0.8.13',
+}
 
-export default config;
+export default config
