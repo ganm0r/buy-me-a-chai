@@ -1,4 +1,5 @@
-import React, { useState, useEffect, SetStateAction } from 'react';
+import React, { useState, useEffect } from 'react';
+import styled from "styled-components";
 
 import { ethers } from 'ethers';
 import ABI from '../../utils/BuyMeAChai.json';
@@ -10,6 +11,15 @@ import { Card } from '../../components/Card';
 interface SupportProps {
   creatorName: string;
 }
+
+const StyledP = styled.p`
+  color: black;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0;
+  padding: 0;
+`;
 
 const Support = ({ creatorName }: SupportProps) => {
   const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
@@ -194,17 +204,17 @@ const Support = ({ creatorName }: SupportProps) => {
             minWidth: '100vw',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '10%',
+            gap: '5%',
           }}
         >
-          <div style={{ minWidth: '32vw', minHeight: '48vh', maxHeight: '48vh', overflowY: 'scroll', scrollbarWidth: 'none' }}>
+          <div style={{ minWidth: '48vw', maxWidth: '48vw', minHeight: '48vh', maxHeight: '48vh', overflowY: 'scroll', scrollbarWidth: 'none', padding: '20px' }}>
             {account &&
               chais.map((chai, index) => (
-                  <Card key={index} gridTemplateRows="repeat(4, 0.5fr)" bgColor="lightpink">
-                    <p>{chai.name}</p>
-                    <p>{chai.message}</p>
-                    <p>{chai.timestamp.toString()}</p>
-                    <p>{chai.address}</p>
+                  <Card key={index} gridTemplateRows="repeat(4, 0.5fr)" bgColor="lightyellow">
+                    <StyledP>Name: {chai.name}</StyledP>
+                    <StyledP>Message: {chai.message}</StyledP>
+                    <StyledP>Date: {chai.timestamp.toString()}</StyledP>
+                    <StyledP>Address: {chai.address}</StyledP>
                   </Card>
                 )
               )}
