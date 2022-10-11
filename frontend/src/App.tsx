@@ -1,5 +1,6 @@
 import React from 'react';
+import { Support } from 'pages/Support';
 
-const App = () => <div className="gndhrv">Empty app</div>;
+const App = () => <Support creatorName="Gandharv" />;
 
 export default App;
