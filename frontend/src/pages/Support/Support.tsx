@@ -13,7 +13,7 @@ interface SupportProps {
 }
 
 const StyledP = styled.p`
-  color: black;
+  color: lightyellow;
   font-size: 32px;
   font-weight: 800;
   line-height: 36px;
@@ -183,7 +183,7 @@ const Support = ({ creatorName }: SupportProps) => {
           placeItems: 'center',
           alignContent: 'center',
           minHeight: '100vh',
-          backgroundImage: 'linear-gradient(to top, white, lightyellow)',
+          backgroundColor: 'antiquewhite',
         }}
       >
         <h1
@@ -207,10 +207,10 @@ const Support = ({ creatorName }: SupportProps) => {
             gap: '5%',
           }}
         >
-          <div style={{ minWidth: '48vw', maxWidth: '48vw', minHeight: '48vh', maxHeight: '48vh', overflowY: 'scroll', scrollbarWidth: 'none', padding: '20px' }}>
+          <div style={{ minWidth: '48vw', maxWidth: '48vw', maxHeight: '50vh', overflowY: 'scroll', scrollbarWidth: 'none', padding: '20px' }}>
             {account &&
               chais.map((chai, index) => (
-                  <Card key={index} gridTemplateRows="repeat(4, 0.5fr)" bgColor="lightyellow">
+                  <Card key={index} gridTemplateRows="repeat(4, 0.5fr)" bgColor="black">
                     <StyledP>Name: {chai.name}</StyledP>
                     <StyledP>Message: {chai.message}</StyledP>
                     <StyledP>Date: {chai.timestamp.toString()}</StyledP>
@@ -219,7 +219,7 @@ const Support = ({ creatorName }: SupportProps) => {
                 )
               )}
           </div>
-          <div style={{ minWidth: '32vw', minHeight: '48vh' }}>
+          <div style={{ minWidth: '32vw', minHeight: '100%' }}>
             <Card bgColor="lightyellow" gridTemplateRows="0.8fr 2fr">
               <h1 style={{ textAlign: 'center', fontSize: '48px' }}>Buy {creatorName} a chai ☕</h1>
               {account ? (
